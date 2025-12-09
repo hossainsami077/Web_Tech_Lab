@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Theme Toggle</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      header,
+      footer,
+      section {
+        padding: 20px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      #themeToggle {
+        margin: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="themeToggle">Switch to Dark Mode</button>
+
+    <header id="header">My Portfolio</header>
+    <section id="content">Welcome to my portfolio website!</section>
+    <footer id="footer">© 2025 My Portfolio</footer>
+
+    <script>
+      const themeToggleBtn = document.getElementById("themeToggle");
+
+      // Theme objects
+      const lightTheme = {
+        background: "#ffffff",
+        text: "#000000",
+        border: "#cccccc",
+      };
+
+      const darkTheme = {
+        background: "#1a1a1a",
+        text: "#ffffff",
+        border: "#444444",
+      };
+
+      let isDarkMode = false; // store current mode
+
+      function applyTheme(theme) {
+        document.body.style.backgroundColor = theme.background;
+        document.body.style.color = theme.text;
+
+        document.getElementById("header").style.borderColor = theme.border;
+        document.getElementById("content").style.borderColor = theme.border;
+        document.getElementById("footer").style.borderColor = theme.border;
+      }
+
+      themeToggleBtn.addEventListener("click", function () {
+        if (isDarkMode) {
+          applyTheme(lightTheme);
+          themeToggleBtn.textContent = "Switch to Dark Mode";
+          isDarkMode = false;
+        } else {
+          applyTheme(darkTheme);
+          themeToggleBtn.textContent = "Switch to Light Mode";
+          isDarkMode = true;
+        }
+      });
+
+      // Apply light theme by default
+      applyTheme(lightTheme);
+    </script>
+  </body>
+</html>

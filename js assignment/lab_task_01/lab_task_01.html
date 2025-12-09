@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Portal Signup</title>
+  </head>
+
+  <body>
+    <h2>Student Portal Signup</h2>
+
+    <form id="signupForm">
+      <div class="input-group">
+        <label>Full Name:</label><br />
+        <input type="text" id="fullname" />
+        <div class="error" id="nameError"></div>
+      </div>
+
+      <div class="input-group">
+        <label>Email:</label><br />
+        <input type="text" id="email" />
+        <div class="error" id="emailError"></div>
+      </div>
+
+      <div class="input-group">
+        <label>Password:</label><br />
+        <input type="password" id="password" />
+        <div class="error" id="passwordError"></div>
+      </div>
+
+      <div class="input-group">
+        <label>Confirm Password:</label><br />
+        <input type="password" id="confirmPassword" />
+        <div class="error" id="confirmError"></div>
+      </div>
+
+      <div class="input-group">
+        <label>Phone Number:</label><br />
+        <input type="text" id="phone" />
+        <div class="error" id="phoneError"></div>
+      </div>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="success"></div>
+
+    <script>
+      document
+        .getElementById("signupForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Stop form submission
+
+          // Clear previous errors
+          document.getElementById("nameError").innerText = "";
+          document.getElementById("emailError").innerText = "";
+          document.getElementById("passwordError").innerText = "";
+          document.getElementById("confirmError").innerText = "";
+          document.getElementById("phoneError").innerText = "";
+          document.getElementById("success").innerText = "";
+
+          // Get values
+          let name = document.getElementById("fullname").value.trim();
+          let email = document.getElementById("email").value.trim();
+          let password = document.getElementById("password").value;
+          let confirmPassword =
+            document.getElementById("confirmPassword").value;
+          let phone = document.getElementById("phone").value.trim();
+
+          let valid = true;
+
+          // Name validation
+          if (name === "") {
+            document.getElementById("nameError").innerText =
+              "Full name is required.";
+            valid = false;
+          }
+
+          // Email validation (@ and .)
+          if (!email.includes("@") || !email.includes(".")) {
+            document.getElementById("emailError").innerText =
+              "Enter a valid email address.";
+            valid = false;
+          }
+
+          // Password validation (min 6 chars)
+          if (password.length < 6) {
+            document.getElementById("passwordError").innerText =
+              "Password must be at least 6 characters.";
+            valid = false;
+          }
+
+          // Password match check
+          if (password !== confirmPassword) {
+            document.getElementById("confirmError").innerText =
+              "Passwords do not match.";
+            valid = false;
+          }
+
+          // Phone number validation
+          if (isNaN(phone) || phone === "") {
+            document.getElementById("phoneError").innerText =
+              "Phone number must contain only digits.";
+            valid = false;
+          }
+
+          // If all valid → show success message
+          if (valid) {
+            document.getElementById("success").innerText =
+              "Registration Successful!";
+          }
+        });
+    </script>
+  </body>
+</html>
