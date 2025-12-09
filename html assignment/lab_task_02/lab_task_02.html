@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>University Admission Form</title>
+  </head>
+
+  <body>
+    <h1>University Admission Form</h1>
+
+    <!-- Form Container -->
+    <form action="#" method="post" enctype="multipart/form-data">
+      <!-- PERSONAL INFORMATION SECTION -->
+      <fieldset>
+        <legend><strong>Personal Information</strong></legend>
+
+        <label for="fname">First Name:</label><br />
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          required
+          maxlength="30"
+        /><br /><br />
+
+        <label for="lname">Last Name:</label><br />
+        <input
+          type="text"
+          id="lname"
+          name="lname"
+          required
+          maxlength="30"
+        /><br /><br />
+
+        <label for="email">Email Address:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="dob">Date of Birth:</label><br />
+        <input type="date" id="dob" name="dob" required /><br /><br />
+
+        <p>Gender:</p>
+        <input type="radio" id="male" name="gender" value="Male" required />
+        Male
+        <br />
+
+        <input type="radio" id="female" name="gender" value="Female" /> Female
+        <br />
+
+        <input type="radio" id="other" name="gender" value="Other" /> Other
+        <br /><br />
+
+        <p>Interests (You may choose multiple):</p>
+        <input type="checkbox" id="sports" name="interests" value="Sports" />
+        Sports
+        <br />
+
+        <input type="checkbox" id="music" name="interests" value="Music" />
+        Music
+        <br />
+
+        <input type="checkbox" id="coding" name="interests" value="Coding" />
+        Coding
+        <br />
+
+        <input type="checkbox" id="arts" name="interests" value="Arts" /> Arts
+        <br /><br />
+      </fieldset>
+
+      <br />
+
+      <!-- ACADEMIC INFORMATION SECTION -->
+      <fieldset>
+        <legend><strong>Academic Information</strong></legend>
+
+        <label for="ssc">SSC GPA:</label><br />
+        <input
+          type="text"
+          id="ssc"
+          name="ssc"
+          required
+          maxlength="4"
+        /><br /><br />
+
+        <label for="hsc">HSC GPA:</label><br />
+        <input
+          type="text"
+          id="hsc"
+          name="hsc"
+          required
+          maxlength="4"
+        /><br /><br />
+
+        <label for="dept">Preferred Department:</label><br />
+        <select id="dept" name="dept" required>
+          <option value="">-- Select Department --</option>
+          <option value="CSE">Computer Science & Engineering (CSE)</option>
+          <option value="EEE">Electrical & Electronic Engineering (EEE)</option>
+          <option value="BBA">Bachelor of Business Administration (BBA)</option>
+          <option value="ENG">English Literature</option></select
+        ><br /><br />
+
+        <label for="documents"
+          >Upload Required Documents (SSC/HSC Transcript, Photo):</label
+        ><br />
+        <input
+          type="file"
+          id="documents"
+          name="documents"
+          required
+        /><br /><br />
+      </fieldset>
+
+      <br />
+
+      <!-- FORM BUTTONS -->
+      <button type="submit">Submit Application</button>
+      <button type="reset">Reset Form</button>
+    </form>
+  </body>
+</html>
