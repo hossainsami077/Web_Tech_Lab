@@ -1,0 +1,58 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+header {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.profile-box {
+  width: 50%;
+  margin: auto;
+  background: #ffffff;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto 15px auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.student-name {
+  text-align: center;
+  font-size: 1.8em; /* Using em unit */
+}
+
+.student-info {
+  text-align: center;
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+.bio {
+  margin-top: 15px;
+  font-size: 1em;
+  text-align: justify;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #333;
+  color: white;
+  margin-top: 20px;
+}
